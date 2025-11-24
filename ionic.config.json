@@ -1,0 +1,7 @@
+{
+  "name": "proyectoparcial3EA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
