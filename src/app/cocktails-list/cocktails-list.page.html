@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cocktails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngIf="cocktails.length > 0">
+    
+    <ion-item 
+      *ngFor="let c of cocktails" 
+      (click)="openDetail(c.idDrink)"
+      detail="true">
+
+      <ion-thumbnail slot="start">
+        <img [src]="c.strDrinkThumb" />
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2>{{ c.strDrink }}</h2> <!-- SOLO NOMBRE -->
+      </ion-label>
+
+    </ion-item>
+
+  </ion-list>
+
+  <div class="empty" *ngIf="cocktails.length === 0">
+    <p>No cocktails found</p>
+  </div>
+
+</ion-content>

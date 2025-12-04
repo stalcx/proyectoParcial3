@@ -1,27 +1,124 @@
-#container {
+ion-content {
+  --background: #ffffff;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  font-family: 'Arial', sans-serif;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+/* Triángulo/forma verde superior */
+.header-shape {
+  height: 130px;
+  background: linear-gradient(135deg, #39b54a 0%, #2d9b3a 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 65%, 50% 100%, 0 65%);
 }
 
-#container p {
+/* Triángulo/forma verde inferior */
+.footer-shape {
+  height: 130px;
+  background: linear-gradient(135deg, #39b54a 0%, #2d9b3a 100%);
+  clip-path: polygon(0 35%, 50% 0, 100% 35%, 100% 100%, 0 100%);
+}
+
+.container {
+  padding: 20px;
+}
+
+/* Títulos */
+.title {
+  margin-top: 20px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Foto redonda */
+.photo-wrapper img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin: 20px auto;
+  display: block;
+}
+
+/* Nombre */
+.name {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Matrícula */
+.id {
   font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+  letter-spacing: 3px;
+  margin-top: 4px;
+  font-weight: 600;
 }
 
-#container a {
-  text-decoration: none;
+/* Carrera */
+.career {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Botón */
+.button-container {
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+ion-button {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+ion-content {
+  --ion-text-color: #000 !important;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+/* Botón verde elegante */
+.btn-elegante-verde {
+  background: #2ecc71; /* verde elegante */
+  color: white;
+  border: none;
+  padding: 14px 34px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  /* Sombras */
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.45);
+
+  /* Animación suave */
+  transition: all 0.25s ease;
+  animation: entradaSuave 0.8s ease-out;
+}
+
+/* Hover: brillo suave */
+.btn-elegante-verde:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 22px rgba(46, 204, 113, 0.55);
+}
+
+/* Efecto al presionar */
+.btn-elegante-verde:active {
+  transform: scale(0.96);
+  box-shadow: 0 4px 10px rgba(46, 204, 113, 0.35);
+}
+
+/* Animación de aparición */
+@keyframes entradaSuave {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

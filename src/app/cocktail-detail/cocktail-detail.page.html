@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/cocktails"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ cocktail?.strDrink || 'Cocktail' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!loading">
+
+  <div *ngIf="cocktail; else notFound">
+    <ion-card>
+      <img [src]="cocktail.strDrinkThumb" alt="{{ cocktail.strDrink }}" />
+
+      <ion-card-header>
+        <ion-card-title>{{ cocktail.strDrink }}</ion-card-title>
+        <ion-card-subtitle>{{ cocktail.strAlcoholic }} • {{ cocktail.strCategory }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <h3>Ingredients</h3>
+        <ul>
+          <li *ngFor="let ing of ingredients">{{ ing }}</li>
+        </ul>
+
+        <h3>Instructions</h3>
+        <p>{{ cocktail.strInstructions }}</p>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ng-template #notFound>
+    <div class="no-data">
+      <p *ngIf="errorMsg">{{ errorMsg }}</p>
+      <p *ngIf="!errorMsg">No details found.</p>
+    </div>
+  </ng-template>
+
+</ion-content>
+
+<ion-spinner *ngIf="loading" name="crescent" class="center"></ion-spinner>
